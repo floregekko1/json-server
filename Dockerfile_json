@@ -5,6 +5,6 @@ VOLUME /app
 WORKDIR /app
 RUN python3 -m pip install Flask flask_script
 COPY json-server.py /app
-COPY read_jason /app
+COPY read_json /app
 COPY write_json /app
-CMD ["python3","json-server.py","read_jason","write_json"]
+CMD ["python3","json-server.py","read_json","write_json"]
