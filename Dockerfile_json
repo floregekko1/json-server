@@ -3,7 +3,7 @@ RUN dnf -y update
 EXPOSE 5000
 VOLUME /app
 WORKDIR /app
-RUN pip3 install flask flask_script
+RUN python3 -m pip install Flask flask_script
 COPY json-server.py /app
 COPY read_jason /app
 COPY write_json /app
