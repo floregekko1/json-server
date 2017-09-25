@@ -1,9 +1,10 @@
 FROM fedora:latest
 RUN dnf -y update
 EXPOSE 5000
-RUN dnf -y python3-pip3 python3-dev build-essential
 VOLUME /app
 WORKDIR /app
-RUN pip3 install flask
-ENTRYPOINT ["python3"]
-CMD ["app.py"]
+RUN pip3 install flask flask_script
+COPY json-server.py /app
+COPY read_jason /app
+COPY write_json /app
+CMD ["python3","json-server.py","read_jason","write_json"]
